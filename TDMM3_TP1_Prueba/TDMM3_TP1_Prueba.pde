@@ -22,9 +22,18 @@ void draw(){
   
   if(estado.equals("inicio")){
   background(255);
+  
+  //Si empieza por el lado azul. Izquierda. 
     if(mouseX>0 && mouseX<width-667){
-   
-estado="adentro";
+   estado="adentro";
+} 
+//Si empieza por el lado verde. Centro. 
+else if(mouseX>333&&mouseX<667){
+estado="afuera";
+} 
+//Si empieza por el lado rojo. Derecha.
+else if(mouseX>667&&mouseX<width){
+estado="quiosco";
 } 
   }
 
