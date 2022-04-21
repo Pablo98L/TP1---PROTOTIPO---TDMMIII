@@ -1,6 +1,6 @@
 import ddf.minim.*;
 String estado; 
-int posX=mouseX, posY=mouseY;
+
 // SONIDO
 Minim minim;
 
@@ -49,7 +49,7 @@ else if(estado.equals("adentro")){
   background(0,0,255);
   tiempo.dibujar();
   fill(0,0,0);
-      ellipse(posX,posY,50,50);
+
   //Suena lluvia de interior.
   lluvia01.play();
   netflix.play();
