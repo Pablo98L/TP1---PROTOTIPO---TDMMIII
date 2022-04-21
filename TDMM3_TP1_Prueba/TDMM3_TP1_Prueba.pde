@@ -104,6 +104,9 @@ estado="afuera";
 void mouseMoved() {
  
   //Luego de 20 segundos detecta movimiento. si se mueve el mouse: ellipse. 
+   //Esto aun pasa en todos los estados. Aunque luego de 20 segundos si estas en el de afuera (verde) y
+   //se mueve el mouse, se estan formando ellipses, aunque no se vean. Deberia luego condicionar para que suceda
+  // en uno u otro estado. 
   if (mouseX > 0 && mouseX<333 && sesenta>20 ) {
    ellipse(mouseX,mouseY,50,50);
   }
