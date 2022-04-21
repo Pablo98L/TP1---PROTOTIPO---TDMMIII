@@ -23,7 +23,7 @@ class Tiempo {
     }
 
 //Pasados 10 segundos puede pasar algo. 
-    if (sesenta>10) {
+    if (sesenta>=10) {
       textSize(80);
       fill(0,0, 0);
       text(cambio, width/2, height/2);
