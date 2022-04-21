@@ -1,15 +1,19 @@
 import ddf.minim.*;
 String estado; 
-
+int posX=mouseX, posY=mouseY;
 // SONIDO
 Minim minim;
 
 AudioPlayer lluvia01, lluvia02, netflix, campana;
 
+Tiempo tiempo;
 void setup(){
 size(1000,400);
   estado="inicio";
-  
+
+
+  tiempo= new Tiempo();
+
     minim = new Minim(this);
     lluvia01 = minim.loadFile( "Lluvia01.mp3");
     lluvia02 = minim.loadFile( "Lluvia02.mp3");
@@ -18,11 +22,13 @@ size(1000,400);
   }
 
 void draw(){
+    
 
+tiempo.dibujar();
   
   if(estado.equals("inicio")){
   background(255);
-  
+tiempo.dibujar();
   //Si empieza por el lado azul. Izquierda. 
     if(mouseX>0 && mouseX<width-667){
    estado="adentro";
@@ -41,11 +47,15 @@ estado="quiosco";
 else if(estado.equals("adentro")){
 
   background(0,0,255);
-  
+  tiempo.dibujar();
+  fill(0,0,0);
+      ellipse(posX,posY,50,50);
   //Suena lluvia de interior.
   lluvia01.play();
   netflix.play();
   lluvia02.rewind();
+
+    
   if(mouseX>333&&mouseX<667){
   estado="afuera";
   }
@@ -89,4 +99,12 @@ estado="afuera";
 
 }
   
+}
+
+void mouseMoved() {
+ 
+  //Luego de 20 segundos detecta movimiento. si se mueve el mouse: ellipse. 
+  if (mouseX > 0 && mouseX<333 && sesenta>20 ) {
+   ellipse(mouseX,mouseY,50,50);
+  }
 }
