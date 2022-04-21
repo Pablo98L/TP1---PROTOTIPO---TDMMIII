@@ -1,10 +1,13 @@
 import ddf.minim.*;
  
+// Estado. 
 Estados e;
 
-// SONIDO
+// Sonido.
 Minim minim;
 AudioPlayer lluvia01, lluvia02, netflix, campana;
+
+//Tiempo.
 Tiempo tiempo;
 
 
@@ -14,6 +17,8 @@ size(1000,400);
     tiempo= new Tiempo();
     e= new Estados();
     minim = new Minim(this);
+    
+    // Sonidos.
     lluvia01 = minim.loadFile( "Lluvia01.mp3");
     lluvia02 = minim.loadFile( "Lluvia02.mp3");
     netflix = minim.loadFile( "Intro_netflix.mp3");
@@ -34,7 +39,7 @@ void mouseMoved() {
   //Luego de 20 segundos detecta movimiento solo en el estado de adentro (azul).
   //si se mueve el mouse: ellipse. 
    
-  if (mouseX > 0 && mouseX<333 && sesenta>20 && !adentro ) {
+  if (mouseX > 0 && mouseX<333 && contadorT>20 && !adentro ) {
    ellipse(mouseX,mouseY,50,50);
   }
 }

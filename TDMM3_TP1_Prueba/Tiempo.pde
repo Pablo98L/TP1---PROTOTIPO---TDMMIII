@@ -1,4 +1,4 @@
-int sesenta;
+int contadorT;
 boolean activo =false;
 
 class Tiempo {
@@ -9,21 +9,21 @@ class Tiempo {
   String cambio;
 
   Tiempo() {
-    sesenta=0;
+    contadorT=0;
     time = millis();
       cambio="pasa algo";
         }
 
   void dibujar() {
 
-     println(sesenta);
+     println(contadorT);
     if (millis() - time >= wait) {
-      sesenta = sesenta + segundo;
+      contadorT = contadorT + segundo;
       time = millis();//also update the stored time
     }
 
 //Pasados 10 segundos puede pasar algo. 
-    if (sesenta>=10) {
+    if (contadorT>=10) {
       textSize(80);
       fill(0,0, 0);
       text(cambio, width/2, height/2);
