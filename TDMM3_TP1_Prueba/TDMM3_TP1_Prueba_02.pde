@@ -34,7 +34,7 @@ void mouseMoved() {
   //Luego de 20 segundos detecta movimiento solo en el estado de adentro (azul).
   //si se mueve el mouse: ellipse. 
    
-  if (mouseX > 0 && mouseX<333 && sesenta>5 && !adentro ) {
+  if (mouseX > 0 && mouseX<333 && sesenta>20 && !adentro ) {
    ellipse(mouseX,mouseY,50,50);
   }
 }
